@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# Data
+# Diabetes-Prediction-System.csv
+
+# Models
+# trained_model.sav (Optional: You might want to include this for deployment)
+
+# OS
+.DS_Store
+Thumbs.db
