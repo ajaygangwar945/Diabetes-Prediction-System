@@ -1,0 +1,48 @@
+# Project Documentation: Diabetes Prediction System
+
+## 1. Overview
+The Diabetes Prediction System is a machine learning-based web application designed to predict whether a patient has diabetes based on specific diagnostic measurements. The goal of this project was to create a reliable, easy-to-use tool for early health screening.
+
+## 2. Why I Built This Project
+Diabetes is one of the most common chronic diseases globally. Early detection can significantly improve health outcomes. I wanted to apply machine learning to a real-world healthcare problem to demonstrate how data-driven insights can assist in medical diagnostics.
+
+## 3. Technology Stack & Rationale
+
+### Python
+I chose Python because it is the industry standard for Data Science and Machine Learning, offering a rich ecosystem of libraries.
+
+### Scikit-Learn (SVM Algorithm)
+I used the **Support Vector Machine (SVM)** classifier. 
+- **Reason**: SVM is highly effective for binary classification tasks (Diabetic vs. Non-Diabetic) and performs exceptionally well on datasets with a clear margin of separation. It is robust and handles small-to-medium datasets like the PIMA dataset very efficiently.
+
+### Streamlit
+For the frontend, I used **Streamlit**.
+- **Reason**: Traditional web development (HTML/CSS/JS) takes time. Streamlit allows me to turn a Python script into a beautiful, interactive web app in minutes, which is perfect for data science projects.
+
+### Pandas & NumPy
+Essential for data cleaning, manipulation, and numerical operations. SVM requires numerical input, and these libraries handle the transformation perfectly.
+
+### Pickle
+Used for model serialization.
+- **Reason**: Training a model every time the app runs is inefficient. Pickle allows me to save the trained model into a `.sav` file and load it instantly when the user visits the website.
+
+## 4. Technical Implementation Details
+
+### The Predictive Pipeline
+1. **User Input**: Collected via Streamlit text inputs.
+2. **Transformation**: The input data is converted into a NumPy array and then into a Pandas DataFrame with proper feature names to avoid warnings.
+3. **Inference**: The `loaded_model.predict()` function processes the input.
+4. **Logic**: If the model returns `[0]`, the result is "Non-Diabetic"; if `[1]`, the result is "Diabetic".
+
+## 5. Challenges Faced
+- **Feature Matching**: Ensuring the input features passed to the model exactly match the order and names used during training.
+- **UI Design**: Making the interface intuitive for non-technical users while maintaining a professional medical look.
+
+## 6. Future Improvements
+- Adding a "Batch Prediction" feature via CSV upload.
+- Integrating more advanced algorithms like Random Forest or XGBoost for comparison.
+- Adding data visualizations (graphs/charts) of the user's metrics vs. the dataset average.
+
+---
+**Developed by Ajay Gangwar**
+Date: May 16, 2026
