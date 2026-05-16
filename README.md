@@ -87,14 +87,15 @@ streamlit run Diabetes-Prediction-System.py
 
 ```text
 Diabetes-Prediction-System/
-├── Diabetes-Prediction-System.py   # Main Application Logic (Streamlit)
-├── trained_model.sav               # Pre-trained SVM Model
-├── Diabetes-Prediction-System.csv  # Original Dataset (PIMA)
-├── Diabetes-Prediction-System.ipynb # Model Training Notebook
-├── requirements.txt                # Python library dependencies
-├── README.md                       # Visual project documentation
-├── .gitignore                      # File exclusion list
-└── banner.png                      # Project branding imagery
+├── Diabetes-Prediction-System.py    # Main Streamlit Application
+├── trained_model.sav                # Saved SVM Classifier Model
+├── Diabetes-Prediction-System.csv   # PIMA Diabetes Dataset
+├── Diabetes-Prediction-System.ipynb  # Jupyter Notebook (Training & Analysis)
+├── PROJECT_DETAILS.txt              # Detailed Technical Documentation
+├── requirements.txt                 # Project Dependencies
+├── README.md                        # Visual Overview & Guide
+├── .gitignore                       # Git exclusion file
+└── banner.png                       # Dashboard Branding Asset
 ```
 
 ---
