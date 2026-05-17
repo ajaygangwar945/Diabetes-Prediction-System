@@ -1,0 +1,8 @@
+.git
+.gitignore
+__pycache__
+*.ipynb
+*.csv
+PROJECT_DETAILS.txt
+*.md
+banner.png
