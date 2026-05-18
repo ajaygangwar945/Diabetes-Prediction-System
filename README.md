@@ -7,6 +7,8 @@
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue?style=for-the-badge&logo=python&logoColor=white)
 ![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
 ![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-ML-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-Containerized-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![CI Pipeline](https://img.shields.io/github/actions/workflow/status/ajaygangwar945/Diabetes-Prediction-System/ci.yml?style=for-the-badge&logo=github-actions&label=CI%20Pipeline)
 ![Live Demo](https://img.shields.io/badge/Live_Demo-Click_Here-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white&link=https://diabetes-prediction-system-945.streamlit.app/)
 
 
@@ -29,6 +31,8 @@ The project is live and accessible online.
 - **📱 Responsive UI**: A sleek, modern Streamlit interface optimized for both desktop and mobile devices.
 - **🛠️ Reliable ML Engine**: Powered by a finely-tuned Support Vector Machine (SVM) algorithm for robust binary classification.
 - **⚕️ User-Centric Design**: Includes medical icons and helpful placeholders to guide users through the health metric input process.
+- **🐳 Containerized**: Fully containerized using Docker for consistent, reproducible environments.
+- **🔄 CI/CD Ready**: Integrated with GitHub Actions for automated syntax checking and Docker image building.
 
 ---
 
@@ -47,6 +51,8 @@ The project is live and accessible online.
 - **ML Libraries**: [Scikit-Learn](https://scikit-learn.org/), [NumPy](https://numpy.org/)
 - **Data Handling**: [Pandas](https://pandas.pydata.org/)
 - **Model Serialization**: [Pickle](https://docs.python.org/3/library/pickle.html)
+- **Containerization**: [Docker](https://www.docker.com/)
+- **CI/CD**: [GitHub Actions](https://github.com/features/actions)
 
 ---
 
@@ -81,20 +87,36 @@ pip install -r requirements.txt
 streamlit run Diabetes-Prediction-System.py
 ```
 
+### 5. Run with Docker (Alternative)
+
+If you have Docker installed, you can build and run the application in a container without installing local dependencies.
+
+```bash
+# Build the Docker image
+docker build -t diabetes-prediction-system .
+
+# Run the container
+docker run -p 8501:8501 diabetes-prediction-system
+```
+
 ---
 
 ## 📁 File Structure
 
 ```text
 Diabetes-Prediction-System/
+├── .github/workflows/ci.yml         # GitHub Actions CI Pipeline Configuration
+├── .elasticbeanstalk/               # AWS Elastic Beanstalk Configuration
 ├── Diabetes-Prediction-System.py    # Main Streamlit Application
 ├── trained_model.sav                # Saved SVM Classifier Model
 ├── Diabetes-Prediction-System.csv   # PIMA Diabetes Dataset
-├── Diabetes-Prediction-System.ipynb  # Jupyter Notebook (Training & Analysis)
+├── Diabetes-Prediction-System.ipynb # Jupyter Notebook (Training & Analysis)
+├── Dockerfile                       # Docker Image Instructions
 ├── PROJECT_DETAILS.txt              # Detailed Technical Documentation
 ├── requirements.txt                 # Project Dependencies
 ├── README.md                        # Visual Overview & Guide
 ├── .gitignore                       # Git exclusion file
+├── .dockerignore                    # Docker exclusion file
 └── banner.png                       # Dashboard Branding Asset
 ```
 

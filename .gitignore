@@ -24,3 +24,6 @@ Thumbs.db
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
+
+# Learning materials
+Diabetes_Prediction_System_DevOps_Summary.pdf

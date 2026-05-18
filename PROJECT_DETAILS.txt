@@ -26,6 +26,10 @@ Essential for data cleaning, manipulation, and numerical operations. SVM require
 Used for model serialization.
 - **Reason**: Training a model every time the app runs is inefficient. Pickle allows me to save the trained model into a `.sav` file and load it instantly when the user visits the website.
 
+### Docker & CI/CD
+- **Docker**: Used to containerize the application, ensuring that it runs consistently across different environments (development, testing, production) without dependency issues.
+- **GitHub Actions**: A CI pipeline is implemented to automatically check Python syntax and build the Docker image upon every push to the `main` branch.
+
 ## 4. Technical Implementation Details
 
 ### The Predictive Pipeline
@@ -33,6 +37,7 @@ Used for model serialization.
 2. **Transformation**: The input data is converted into a NumPy array and then into a Pandas DataFrame with proper feature names to avoid warnings.
 3. **Inference**: The `loaded_model.predict()` function processes the input.
 4. **Logic**: If the model returns `[0]`, the result is "Non-Diabetic"; if `[1]`, the result is "Diabetic".
+5. **Deployment Packaging**: The project is structured with a `Dockerfile` and `.dockerignore` for containerization, and it includes an `.elasticbeanstalk` directory setup for potential deployment to AWS Elastic Beanstalk.
 
 ## 5. Challenges Faced
 - **Feature Matching**: Ensuring the input features passed to the model exactly match the order and names used during training.
@@ -42,6 +47,7 @@ Used for model serialization.
 - Adding a "Batch Prediction" feature via CSV upload.
 - Integrating more advanced algorithms like Random Forest or XGBoost for comparison.
 - Adding data visualizations (graphs/charts) of the user's metrics vs. the dataset average.
+- Implementing automated deployment (CD) directly to a cloud provider like AWS Elastic Beanstalk or Streamlit Cloud upon successful CI builds.
 
 ---
 **Developed by Ajay Gangwar**
