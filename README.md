@@ -8,7 +8,7 @@
 ![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
 ![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-ML-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-Containerized-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![CI Pipeline](https://img.shields.io/github/actions/workflow/status/ajaygangwar945/Diabetes-Prediction-System/ci.yml?style=for-the-badge&logo=github-actions&label=CI%20Pipeline)
+![CI Pipeline](https://img.shields.io/github/actions/workflow/status/ajaygangwar945/Diabetes-Prediction-System/docker.yaml?style=for-the-badge&logo=github-actions&label=CI%20Pipeline)
 ![Live Demo](https://img.shields.io/badge/Live_Demo-Click_Here-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white&link=https://diabetes-prediction-system-945.streamlit.app/)
 
 
@@ -32,7 +32,7 @@ The project is live and accessible online.
 - **🛠️ Reliable ML Engine**: Powered by a finely-tuned Support Vector Machine (SVM) algorithm for robust binary classification.
 - **⚕️ User-Centric Design**: Includes medical icons and helpful placeholders to guide users through the health metric input process.
 - **🐳 Containerized**: Fully containerized using Docker for consistent, reproducible environments.
-- **🔄 CI/CD Ready**: Integrated with GitHub Actions for automated syntax checking and Docker image building.
+- **🔄 CI/CD Ready**: Integrated with GitHub Actions to automate building and pushing the Docker image to Docker Hub.
 
 ---
 
@@ -105,7 +105,7 @@ docker run -p 8501:8501 diabetes-prediction-system
 
 ```text
 Diabetes-Prediction-System/
-├── .github/workflows/ci.yml         # GitHub Actions CI Pipeline Configuration
+├── .github/workflows/docker.yaml    # GitHub Actions Build & Push Workflow
 ├── .elasticbeanstalk/               # AWS Elastic Beanstalk Configuration
 ├── Diabetes-Prediction-System.py    # Main Streamlit Application
 ├── trained_model.sav                # Saved SVM Classifier Model

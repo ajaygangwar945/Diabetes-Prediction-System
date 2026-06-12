@@ -28,7 +28,7 @@ Used for model serialization.
 
 ### Docker & CI/CD
 - **Docker**: Used to containerize the application, ensuring that it runs consistently across different environments (development, testing, production) without dependency issues.
-- **GitHub Actions**: A CI pipeline is implemented to automatically check Python syntax and build the Docker image upon every push to the `main` branch.
+- **GitHub Actions**: A CI/CD pipeline is implemented to automatically build and push the Docker image to Docker Hub upon every push to the `main` branch.
 
 ## 4. Technical Implementation Details
 
