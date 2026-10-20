@@ -8,6 +8,7 @@
 ![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
 ![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-ML-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-Containerized-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-Elastic_Beanstalk-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white)
 ![CI Pipeline](https://img.shields.io/github/actions/workflow/status/ajaygangwar945/Diabetes-Prediction-System/docker.yaml?style=for-the-badge&logo=github-actions&label=CI%20Pipeline)
 ![Live Demo](https://img.shields.io/badge/Live_Demo-Click_Here-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white&link=https://diabetes-prediction-system-945.streamlit.app/)
 
@@ -52,6 +53,7 @@ The project is live and accessible online.
 - **Data Handling**: [Pandas](https://pandas.pydata.org/)
 - **Model Serialization**: [Pickle](https://docs.python.org/3/library/pickle.html)
 - **Containerization**: [Docker](https://www.docker.com/)
+- **Cloud Platform**: [AWS Elastic Beanstalk](https://aws.amazon.com/elasticbeanstalk/) (Amazon Linux 2023 / Docker)
 - **CI/CD**: [GitHub Actions](https://github.com/features/actions)
 
 ---
@@ -122,13 +124,53 @@ Diabetes-Prediction-System/
 
 ---
 
-## 🚀 Deployment
+## 🚀 Cloud Deployment
 
-This app is optimized for **Streamlit Cloud**.
+### 1. AWS Elastic Beanstalk (Containerized Cloud Deployment)
+
+The project includes pre-configured AWS Elastic Beanstalk settings ([`.elasticbeanstalk/config.yml`](file:///c:/Users/ajayg/College/Learning/PEP/DevOps/Projects/Diabetes-Prediction-System/.elasticbeanstalk/config.yml)) running on **Docker on 64-bit Amazon Linux 2023** in the `ap-south-1` (Mumbai) region.
+
+#### Why AWS Elastic Beanstalk?
+- **Automated Provisioning**: Automatically provisions EC2 instances, manages Docker container lifecycle, sets up security groups, and forwards port 80 traffic to Streamlit (port 8501).
+- **Production Operations**: Provides built-in application health monitoring, log aggregation, and zero-downtime rolling updates.
+- **Cost Efficiency**: Can be deployed in Single-Instance mode (`--single`) to remain within the **AWS Free Tier** (saving ~$16/month on Application Load Balancer costs).
+
+#### Deployment Commands:
+
+```bash
+# 1. Configure AWS CLI & Install EB CLI
+pip install awsebcli
+aws configure
+
+# 2. Initialize Elastic Beanstalk
+eb init -p "Docker running on 64bit Amazon Linux 2023" --region ap-south-1 Diabetes-Prediction-System
+
+# 3. Create & Launch Single-Instance Environment (Free-Tier friendly)
+eb create diabetes-prediction-system-env --single
+
+# 4. Deploy Application Updates
+eb deploy
+
+# 5. Open Deployed Application in Browser
+eb open
+
+# 6. Monitor Status & Logs
+eb status
+eb logs
+
+# 7. Teardown / Terminate Environment (Stops all cloud charges)
+eb terminate diabetes-prediction-system-env --force
+```
+
+---
+
+### 2. Streamlit Community Cloud (Alternative)
+
+This app is also optimized for **Streamlit Community Cloud**:
 
 1. Push your code to GitHub.
 2. Connect your repo to [Streamlit Share](https://share.streamlit.io/).
-3. Ensure `requirements.txt` is present for automatic dependency installation.
+3. Set the main file path to `Diabetes-Prediction-System.py` for instant serverless hosting.
 
 ---
 
